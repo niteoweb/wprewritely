@@ -3,8 +3,7 @@ help:
 	@echo "release - package and upload a release"
 
 test:
-	cd web/content/plugins/wprewritely
-	php codecept.phar run --coverage
+	cd web/content/plugins/wprewritely; php codecept.phar run --coverage
 
 release: clean
 	cp web/content/plugins/wprewritely wprewritely -ar

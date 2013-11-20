@@ -187,7 +187,11 @@ class wprewritely extends WPOOP
     }
 
     // skip if posts or pages aren't enabled
-    if ( empty($this->option("posts")) || empty($this->option("pages")) )
+    // leave this for pre php 5.5
+    // more info here http://stackoverflow.com/questions/1075534/cant-use-method-return-value-in-write-context
+    $is_posts = $this->option("posts"); 
+    $is_pages = $this->option("pages");
+    if ( empty($is_posts) || empty($is_pages) )
         return;
 
     $new_strings = $_POST[$this->get_namespace()."field"];
@@ -238,7 +242,12 @@ class wprewritely extends WPOOP
    **/
    public function onSetupPostMeta() {
 
-    if (!empty($this->option("posts"))) {
+    // leave this for pre php 5.5
+    // more info here http://stackoverflow.com/questions/1075534/cant-use-method-return-value-in-write-context
+    $is_posts = $this->option("posts"); 
+    $is_pages = $this->option("pages");
+    
+    if (!empty($is_posts)) {
       add_meta_box(
         $this->get_namespace(),
         "WP Rewritely",
@@ -250,7 +259,7 @@ class wprewritely extends WPOOP
     }
 
 
-    if (!empty($this->option("pages"))) {
+    if (!empty($is_pages)) {
       add_meta_box(
         $this->get_namespace(),
         "WP Rewritely",
