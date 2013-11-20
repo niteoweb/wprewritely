@@ -1,0 +1,171 @@
+[2013-11-20 13:34:14] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:34:14] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:35:26] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:35:43] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:35:43] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:36:11] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:36:11] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:36:11] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:36:11] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:42:15] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:42:15] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:42:15] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:42:15] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:42:15] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:42:15] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:42:25] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:42:25] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:42:25] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:42:25] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:42:25] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:42:25] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:42:25] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:42:25] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:42:33] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:42:33] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:42:33] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:42:33] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:42:33] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:42:33] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:42:33] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:42:33] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:43:50] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:43:50] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:43:50] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:43:50] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:43:50] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:43:50] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:43:51] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:43:51] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:44:48] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:44:48] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:44:48] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:44:48] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:44:48] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:44:48] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:44:48] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:44:48] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:47:05] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:47:05] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:47:05] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:47:05] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:47:05] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:47:05] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:47:06] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:47:06] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:50:17] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:50:17] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:50:17] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:50:17] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:50:17] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:50:17] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:50:17] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:50:17] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:50:17] PluginTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:51:34] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:51:34] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:51:34] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:51:34] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:51:34] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:51:34] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:51:34] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:51:34] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:51:34] PluginTest::testInjectScript.INFO: PASSED [] []
+[2013-11-20 13:51:34] PluginTest::testrenderMetaBox.INFO: PASSED [] []
+[2013-11-20 13:55:36] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:55:36] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:55:36] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:55:36] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:55:36] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:55:36] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:55:36] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:55:36] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:55:36] PluginTest::testInjectScript.INFO: PASSED [] []
+[2013-11-20 13:56:08] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:56:09] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:56:09] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:56:09] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:56:09] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:56:09] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:56:09] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:56:09] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:56:09] PluginTest::testInjectScript.INFO: PASSED [] []
+[2013-11-20 13:56:09] PluginTest::testRenderMetaBox.ALERT: Trying to get property of non-object [] []
+[2013-11-20 13:56:09] PluginTest::testRenderMetaBox.INFO: # ERROR # [] []
+[2013-11-20 13:56:09] PluginTest::testRenderMetaBox.INFO: PASSED [] []
+[2013-11-20 13:58:52] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:58:52] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:58:52] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:58:52] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:58:52] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:58:52] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:58:52] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:58:52] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:58:52] PluginTest::testInjectScript.INFO: PASSED [] []
+[2013-11-20 13:58:52] PluginTest::testRenderMetaBox.ALERT: Failed asserting that '      <div id="wprewritely_plugin">
+      <h4>Paragraph #1</h4><p><i>New line. Another new Line.</i></p>
+            <i>New line.</i>
+            <input type="hidden" name="wprewritely_field_default[0][0]" value="New line." />
+            <input type="hidden" name="wprewritely_field_start[0][0]" value="" />
+            <input type="hidden" name="wprewritely_field_end[0][0]" value="" />
+            <input type="text" name="wprewritely_field[0][0]" style="width:100%" />
+            <br /><br />
+
+            
+            <i>Another new Line.</i>
+            <input type="hidden" name="wprewritely_field_default[0][1]" value="Another new Line." />
+            <input type="hidden" name="wprewritely_field_start[0][1]" value="" />
+            <input type="hidden" name="wprewritely_field_end[0][1]" value="" />
+            <input type="text" name="wprewritely_field[0][1]" style="width:100%" />
+            <br /><br />
+
+                    <div id="save_placeholder">
+          <a class="button" id="clear">Clear</a>
+        </div>
+      </div><!-- end wprewritely_plugin -->
+      ' contains "#Paragraph". [] []
+[2013-11-20 13:58:52] PluginTest::testRenderMetaBox.INFO: # FAILED # [] []
+[2013-11-20 13:58:52] PluginTest::testRenderMetaBox.INFO: PASSED [] []
+[2013-11-20 13:59:23] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:59:23] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:59:23] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:59:23] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:59:23] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:59:23] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:59:23] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:59:23] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:59:23] PluginTest::testInjectScript.INFO: PASSED [] []
+[2013-11-20 13:59:23] PluginTest::testRenderMetaBox.ALERT: Failed asserting that '      <div id="wprewritely_plugin">
+      <h4>Paragraph #1</h4><p><i>New line. Another new Line.</i></p>
+            <i>New line.</i>
+            <input type="hidden" name="wprewritely_field_default[0][0]" value="New line." />
+            <input type="hidden" name="wprewritely_field_start[0][0]" value="" />
+            <input type="hidden" name="wprewritely_field_end[0][0]" value="" />
+            <input type="text" name="wprewritely_field[0][0]" style="width:100%" />
+            <br /><br />
+
+            
+            <i>Another new Line.</i>
+            <input type="hidden" name="wprewritely_field_default[0][1]" value="Another new Line." />
+            <input type="hidden" name="wprewritely_field_start[0][1]" value="" />
+            <input type="hidden" name="wprewritely_field_end[0][1]" value="" />
+            <input type="text" name="wprewritely_field[0][1]" style="width:100%" />
+            <br /><br />
+
+                    <div id="save_placeholder">
+          <a class="button" id="clear">Clear</a>
+        </div>
+      </div><!-- end wprewritely_plugin -->
+      ' contains "jQuery". [] []
+[2013-11-20 13:59:23] PluginTest::testRenderMetaBox.INFO: # FAILED # [] []
+[2013-11-20 13:59:23] PluginTest::testRenderMetaBox.INFO: PASSED [] []
+[2013-11-20 13:59:37] AdminTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:59:37] AdminTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:59:37] AdminTest::testCheckbox_callback.INFO: PASSED [] []
+[2013-11-20 13:59:37] AdminTest::testEmail_callback.INFO: PASSED [] []
+[2013-11-20 13:59:37] PluginTest::testClassExsists.INFO: PASSED [] []
+[2013-11-20 13:59:37] PluginTest::testInitWorks.INFO: PASSED [] []
+[2013-11-20 13:59:37] PluginTest::testOptionContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:59:37] PluginTest::testFunctionGet_namespaceContainsNameOfClass.INFO: PASSED [] []
+[2013-11-20 13:59:37] PluginTest::testInjectScript.INFO: PASSED [] []
+[2013-11-20 13:59:37] PluginTest::testRenderMetaBox.INFO: PASSED [] []

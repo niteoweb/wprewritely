@@ -133,7 +133,7 @@ class wprewritely extends WPOOP
             ?>
 
             <i><?=$s?></i>
-            <input type="hidden" name="'field_default[<?=$i?>][<?=$j?>]" value="<?=$s?>" />
+            <input type="hidden" name="<?=$n?>field_default[<?=$i?>][<?=$j?>]" value="<?=$s?>" />
             <input type="hidden" name="<?=$n?>field_start[<?=$i?>][<?=$j?>]" value="<?=$match[0]?>" />
             <input type="hidden" name="<?=$n?>field_end[<?=$i?>][<?=$j?>]" value="<?=$match[1]?>" />
             <input type="text" name="<?=$n?>field[<?=$i?>][<?=$j?>]" style="width:100%" />
@@ -143,6 +143,7 @@ class wprewritely extends WPOOP
 
             $j++;
           }
+          $j = 0;
           $i++;
         }
       }
@@ -168,45 +169,57 @@ class wprewritely extends WPOOP
   function onPostSave($post_id){
     global $wpdb;
 
-    //don't save if this is draft
+    //don't save if this is revision, when they are enabled
     if ( wp_is_post_revision( $post_id ) )
         return;
 
-    // if this is revision get real post id
-    if ( $parent_id = wp_is_post_revision( $post_id ) ) 
-        $post_id = $parent_id;
+    // get meta about post
+    if(is_object( $post_id )){
+      $post = $post_id;
+    } else {
+      $post = get_post( $post_id );
+    }
+
+    // skip if posts or pages aren't enabled
+    if ( empty($this->option("posts")) || empty($this->option("pages")) )
+        return;
 
     $new_strings = $_POST[$this->get_namespace()."field"];
-    $is_rewrite = true;
-
+    $new_content = array();
+    $should_update = false;
     if (isset($new_strings) && is_array($new_strings)) {
-      if ($is_rewrite) {
-        $new_content = array();
+      $new_content = array();
+      foreach ($new_strings as $paragraph_id => $paragraph) {
 
-        foreach ($new_strings as $paragraph_id => $paragraph) {
-          foreach ($paragraph as $sentence_id => $sentence) {
+        $new_paragraph = array();
 
-            if (!empty($sentence)){
-              $sentence = $_POST[$this->plugin_slug."field_default"][$paragraph_id][$sentence_id];
-            }
+        foreach ($paragraph as $sentence_id => $sentence) {
 
-
-            $start = $_POST[$this->plugin_slug."field_start"][$paragraph_id][$sentence_id];
-            $end = $_POST[$this->plugin_slug."field_end"][$paragraph_id][$sentence_id];
-            $new_content[$paragraph_id][$sentence_id] = $start.$sentence.$end;
+          if (empty($sentence)){
+            $sentence = $_POST[$this->get_namespace()."field_default"][$paragraph_id][$sentence_id];
+          }else{
+            $should_update |= true;
           }
 
+          $start = $_POST[$this->get_namespace()."field_start"][$paragraph_id][$sentence_id];
+          $end = $_POST[$this->get_namespace()."field_end"][$paragraph_id][$sentence_id];
+
+          $new_paragraph[] = $start.$sentence.$end;
         }
 
-        $new_content_p = [];
-        foreach ($new_content as $r){
-          $new_content_p[] = preg_replace("/\\\'(?!\s)/", "'", $r);
-        }
-
-        $new_content_p = implode("\n\n", $new_content_p);
-        $wpdb->update("wp_posts", array("post_content" => $new_content_p), array("ID" => $post_id));
-        
+        $new_content[] = implode(" ", $new_paragraph );
       }
+
+      if (!$should_update) {
+        return;
+      }
+
+      $result = $wpdb->update(
+        $wpdb->posts,
+        array( 'post_content' => implode("\n\n", $new_content)),
+        array( 'ID' => $post->ID )
+      );
+
     }
 
   }
@@ -218,14 +231,30 @@ class wprewritely extends WPOOP
    * @author 
    **/
    public function onSetupPostMeta() {
-    add_meta_box(
-      $this->get_namespace(),
-      "WP Rewritely",
-      array($this, 'renderMetaBox'),
-      "post",
-      "normal",
-      "high"
-    );
+
+    if (!empty($this->option("posts"))) {
+      add_meta_box(
+        $this->get_namespace(),
+        "WP Rewritely",
+        array($this, 'renderMetaBox'),
+        "post",
+        "advanced",
+        "high"
+      );
+    }
+
+
+    if (!empty($this->option("pages"))) {
+      add_meta_box(
+        $this->get_namespace(),
+        "WP Rewritely",
+        array($this, 'renderMetaBox'),
+        "page",
+        "advanced",
+        "high"
+      );
+    }
+
   }
 
 }

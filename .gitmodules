@@ -7,3 +7,6 @@
 [submodule "web/content/plugins/developer"]
 	path = web/content/plugins/developer
 	url = https://github.com/Automattic/developer.git
+[submodule "web/content/plugins/wprewritely/tests/mockpress"]
+	path = web/content/plugins/wprewritely/tests/mockpress
+	url = https://github.com/devishacks/mockpress.git
