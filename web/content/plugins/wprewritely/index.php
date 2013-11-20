@@ -31,6 +31,24 @@ class wprewritely extends WPOOP
     $this->hook( 'save_post', 'onPostSave' , 10, 2);
     $this->hook( 'add_meta_boxes', 'onSetupPostMeta' );
     $this->hook( 'admin_footer', 'onInjectScript' );
+    $this->hook( 'admin_notices', 'onSetupNotice' );
+  }
+
+  /**
+   * Display info to user
+   *
+   * @return string@bool
+   * @author dz0ny
+   **/
+  function onSetupNotice() {
+
+    if (!is_email($this->option("email"))) {
+      ?>
+      <div class="updated">
+        <p><b>WP Rewritely requires e-mail activation and configuration. <a href="<?=get_admin_url()?>/options-writing.php?#wprewritely_plugin">Click here!</a></b></p>
+      </div>
+      <?php
+    }
   }
 
   /**
@@ -99,70 +117,65 @@ class wprewritely extends WPOOP
 
   public function renderMetaBox($post) {
 
-    if (empty($post->post_content)) {
+    $text = $post->post_content;
+
+    if (empty($text)) {
       echo "Content is not available yet.";
       return;
     }
 
-    if (is_email($this->option("email"))) {
+    $regex = "/<\/?\w+((\s+(\w|\w[\w-]*\w)(\s*=\s*(?:\".*?\"|'.*?'|[^'\">\s]+))?)+\s*|\s*)\/?>/i";
+    $ps = explode("\n", $text);
 
-      $text = $post->post_content;
+    $i = 0;
+    $j = 0;
 
-      $regex = "/<\/?\w+((\s+(\w|\w[\w-]*\w)(\s*=\s*(?:\".*?\"|'.*?'|[^'\">\s]+))?)+\s*|\s*)\/?>/i";
-      $ps = explode("\n", $text);
+    ?>
+    <div id="wprewritely_plugin">
+    <?php
 
-      $i = 0;
-      $j = 0;
+    foreach ($ps as $p) {
+      if (strlen(strip_tags(trim($p)))) {
 
-      ?>
-      <div id="wprewritely_plugin">
-      <?php
-
-      foreach ($ps as $p) {
-        if (strlen(strip_tags(trim($p)))) {
-
-          echo '<h4>Paragraph #'.($i+1).'</h4>';
-          $sentences = preg_split('/(?<=[.?!])\s+/', $p, -1, PREG_SPLIT_NO_EMPTY);
-          if (count($sentences) > 1) {
-            echo "<p><i>".strip_tags($p)."</i></p>";
-          }
-
-          foreach ($sentences as $s) {
-            if (!strlen(trim($s))) continue;
-
-            preg_match_all($regex, htmlspecialchars_decode($s), $match);
-            $match = $match[0];
-            if (!count($match)) $match = array("", "");
-            $s = strip_tags(htmlspecialchars_decode($s));
-            $n = $this->get_namespace();
-
-            ?>
-
-            <i><?=$s?></i>
-            <input type="hidden" name="<?=$n?>field_default[<?=$i?>][<?=$j?>]" value="<?=$s?>" />
-            <input type="hidden" name="<?=$n?>field_start[<?=$i?>][<?=$j?>]" value="<?=$match[0]?>" />
-            <input type="hidden" name="<?=$n?>field_end[<?=$i?>][<?=$j?>]" value="<?=$match[1]?>" />
-            <input type="text" name="<?=$n?>field[<?=$i?>][<?=$j?>]" style="width:100%" />
-            <br /><br />
-
-            <?php
-
-            $j++;
-          }
-          $j = 0;
-          $i++;
+        echo '<h4>Paragraph #'.($i+1).'</h4>';
+        $sentences = preg_split('/(?<=[.?!])\s+/', $p, -1, PREG_SPLIT_NO_EMPTY);
+        if (count($sentences) > 1) {
+          echo "<p><i>".strip_tags($p)."</i></p>";
         }
-      }
 
-      ?>
-        <div id="save_placeholder">
-          <a class="button" id="clear">Clear</a>
-        </div>
-      </div><!-- end wprewritely_plugin -->
-      <?php
-    } else {
-      echo('<b>WP Rewritely requires e-mail activation. <a href="'.get_admin_url().'/options-writing.php?#wprewritely_plugin">Click here!</a></b>');
+        foreach ($sentences as $s) {
+          if (!strlen(trim($s))) continue;
+
+          preg_match_all($regex, htmlspecialchars_decode($s), $match);
+          $match = $match[0];
+          if (!count($match)) $match = array("", "");
+          $s = strip_tags(htmlspecialchars_decode($s));
+          $n = $this->get_namespace();
+
+          ?>
+
+          <i><?=$s?></i>
+          <input type="hidden" name="<?=$n?>field_default[<?=$i?>][<?=$j?>]" value="<?=$s?>" />
+          <input type="hidden" name="<?=$n?>field_start[<?=$i?>][<?=$j?>]" value="<?=$match[0]?>" />
+          <input type="hidden" name="<?=$n?>field_end[<?=$i?>][<?=$j?>]" value="<?=$match[1]?>" />
+          <input type="text" name="<?=$n?>field[<?=$i?>][<?=$j?>]" style="width:100%" />
+          <br /><br />
+
+          <?php
+
+          $j++;
+        }
+        $j = 0;
+        $i++;
+      }
     }
+
+    ?>
+      <div id="save_placeholder">
+        <a class="button" style="float:right;" id="clear">Clear</a>
+      </div>
+    </div><!-- end wprewritely_plugin -->
+    <?php
   }
 
 
@@ -246,7 +259,7 @@ class wprewritely extends WPOOP
     // more info here http://stackoverflow.com/questions/1075534/cant-use-method-return-value-in-write-context
     $is_posts = $this->option("posts"); 
     $is_pages = $this->option("pages");
-    
+
     if (!empty($is_posts)) {
       add_meta_box(
         $this->get_namespace(),
