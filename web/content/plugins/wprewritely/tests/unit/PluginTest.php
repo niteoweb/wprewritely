@@ -86,4 +86,14 @@ class PluginTest extends \Codeception\TestCase\Test
         $this->assertContains("save_placeholder", $code);
     }
 
+    public function testRenderMetaBoxNoContent()
+    {   
+        $post = new stdClass();
+        $post->post_content = "";
+        ob_start();
+        $this->plugin->renderMetaBox($post);
+        $code = ob_get_clean();
+        $this->assertContains("Content is not available yet.", $code);
+    }
+
 }

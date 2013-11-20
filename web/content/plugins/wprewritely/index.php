@@ -99,9 +99,15 @@ class wprewritely extends WPOOP
 
   public function renderMetaBox($post) {
 
+    if (empty($post->post_content)) {
+      echo "Content is not available yet.";
+      return;
+    }
+
     if (is_email($this->option("email"))) {
 
       $text = $post->post_content;
+
       $regex = "/<\/?\w+((\s+(\w|\w[\w-]*\w)(\s*=\s*(?:\".*?\"|'.*?'|[^'\">\s]+))?)+\s*|\s*)\/?>/i";
       $ps = explode("\n", $text);
 
