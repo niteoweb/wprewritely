@@ -1,3 +1,6 @@
 /chef-repo/tmp
 **.sublime-workspace
 .vagrant**
+wprewritely
+*.log
+*.zip
