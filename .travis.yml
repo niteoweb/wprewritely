@@ -9,11 +9,10 @@ php:
   # aliased to a recent 5.5.x version
   - 5.5
 
-script: make test
+before_script:
+  - pecl install phar
 
-notifications:
-  irc: "irc.freenode.org#niteoweb"
+script: make test
 
 after_success:
   make release
-  make publish

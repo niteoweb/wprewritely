@@ -18,4 +18,4 @@ clean:
 	rm -rf wprewritely
 
 publish: 
-	curl -X POST -d @wprewritely-$(shell git describe --abbrev=0 --tags).zip -i -H "Authorization: token TOKEN" -H "Accept: application/vnd.github.manifold-preview" "POST https://api.github.com//repos/niteoweb/wprewritely/releases"
+	curl -X POST -d @wprewritely-$(shell git describe --abbrev=0 --tags).zip -i -H "Authorization: token TOKEN" -H "Accept: application/vnd.github.manifold-preview" "POST https://api.github.com/repos/niteoweb/wprewritely/releases"
