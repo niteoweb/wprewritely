@@ -57,13 +57,13 @@ class wprewritely_settings extends WPOOP
 
   public function checkbox_callback($name){
     ?>
-      <input name="<?=$name?>" type="checkbox" id="<?=$name?>" value="1" <?=checked('1', get_option($name))?>  />
+      <input name="<?php echo $name; ?>" type="checkbox" id="<?php echo $name; ?>" value="1" <?php echo checked('1', get_option($name)); ?>  />
     <?php
   }
 
   public function email_callback($name){
     ?>
-      <input name="<?=$name?>" type="email" id="<?=$name?>" value="<?=get_option($name)?>" />
+      <input name="<?php echo $name; ?>" type="email" id="<?php echo $name; ?>" value="<?php echo get_option($name); ?>" />
     <?php
   }
 

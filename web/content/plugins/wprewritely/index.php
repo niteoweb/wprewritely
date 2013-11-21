@@ -4,7 +4,7 @@
  * Plugin Name: WP Rewritely
  * Plugin URI:  http://wprewritely.com
  * Description: WP Rewritely helps you manually rewrite your posts.
- * Version:     2.0.0
+ * Version:     2.0.
  * Author:      Big IM Toolbox
  * Author URI:  http://bigimtoolbox.com
  */
@@ -45,7 +45,7 @@ class wprewritely extends WPOOP
     if (!is_email($this->option("email"))) {
       ?>
       <div class="updated">
-        <p><b>WP Rewritely requires e-mail activation and configuration. <a href="<?=get_admin_url()?>/options-writing.php?#wprewritely_plugin">Click here!</a></b></p>
+        <p><b>WP Rewritely requires e-mail activation and configuration. <a href="<?php echo get_admin_url(); ?>/options-writing.php?#wprewritely_plugin">Click here!</a></b></p>
       </div>
       <?php
     }
@@ -154,11 +154,11 @@ class wprewritely extends WPOOP
 
           ?>
 
-          <i><?=$s?></i>
-          <input type="hidden" name="<?=$n?>field_default[<?=$i?>][<?=$j?>]" value="<?=$s?>" />
-          <input type="hidden" name="<?=$n?>field_start[<?=$i?>][<?=$j?>]" value="<?=$match[0]?>" />
-          <input type="hidden" name="<?=$n?>field_end[<?=$i?>][<?=$j?>]" value="<?=$match[1]?>" />
-          <input type="text" name="<?=$n?>field[<?=$i?>][<?=$j?>]" style="width:100%" />
+          <i><?php echo $s?></i>
+          <input type="hidden" name="<?php echo $n?>field_default[<?php echo $i; ?>][<?php echo $j; ?>]" value="<?php echo $s; ?>" />
+          <input type="hidden" name="<?php echo $n; ?>field_start[<?php echo $i; ?>][<?php echo $j; ?>]" value="<?php echo $match[0]; ?>" />
+          <input type="hidden" name="<?php echo $n; ?>field_end[<?php echo $i; ?>][<?php echo $j; ?>]" value="<?php echo $match[1]; ?>" />
+          <input type="text" name="<?php echo $n; ?>field[<?php echo $i; ?>][<?php echo $j; ?>]" style="width:100%" />
           <br /><br />
 
           <?php
