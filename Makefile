@@ -1,21 +1,18 @@
-help:
-	@echo "test - run tests quickly with the default PHP"
-	@echo "release - package"
-	@echo "publish - upload a release"
+VERSION := 2.0.1
 
 test:
-	cd web/content/plugins/wprewritely; php codecept.phar run --coverage
+	bin/phpunit
 
-release: clean
-	cp web/content/plugins/wprewritely wprewritely -ar
-	rm -rf wprewritely/tests
-	rm wprewritely/codecept.phar
-	rm wprewritely/codeception.yml
-	zip -r wprewritely-$(shell git describe --abbrev=0 --tags).zip wprewritely
+release:
+	cp -ar src wprewritely
+	zip -r wprewritely.zip wprewritely
 	rm -rf wprewritely
+	mv wprewritely.zip build/
 
-clean:
-	rm -rf wprewritely
-
-publish: 
-	curl -X POST -d @wprewritely-$(shell git describe --abbrev=0 --tags).zip -i -H "Authorization: token TOKEN" -H "Accept: application/vnd.github.manifold-preview" "POST https://api.github.com/repos/niteoweb/wprewritely/releases"
+deploy:
+	-bin/linux/amd64/github-release delete -u niteoweb -r wprewritely -t v$(VERSION)
+	-bin/linux/amd64/github-release delete -u niteoweb -r wprewritely -t latest
+	bin/linux/amd64/github-release release -u niteoweb -r wprewritely -t v$(VERSION)
+	bin/linux/amd64/github-release release -u niteoweb -r wprewritely -t latest
+	bin/linux/amd64/github-release upload -u niteoweb -r wprewritely -t v$(VERSION) -f build/wprewritely.zip -n wprewritely.zip
+	bin/linux/amd64/github-release upload -u niteoweb -r wprewritely -t latest -f build/wprewritely.zip -n wprewritely.zip

@@ -4,3 +4,8 @@
 wprewritely
 *.log
 *.zip
+.idea
+vendor
+bin
+build
+cover
